@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pampered Companion Care — Website Copy v2 (Updated)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #B8965A;
+    --gold-light: #F5EDD8;
+    --navy: #1B2B3A;
+    --cream: #FAF8F4;
+    --text: #2D2D2D;
+    --muted: #6B6B6B;
+    --border: #E2D9C8;
+    --green: #3A6B4A;
+    --green-light: #EBF3EE;
+    --blue: #1E5490;
+    --blue-light: #E8F0FA;
+    --purple: #5B3FA0;
+    --purple-light: #F0ECF9;
+    --tier1: #2E7D52;
+    --tier2: #1E5490;
+    --tier3: #7B3FA0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; font-size:15px; line-height:1.7; color:var(--text); background:var(--cream); }
+
+  /* NAV */
+  .toc { background:var(--navy); color:#fff; padding:1.5rem 2rem; position:sticky; top:0; z-index:100; }
+  .toc-inner { max-width:900px; margin:0 auto; display:flex; align-items:center; gap:2rem; flex-wrap:wrap; }
+  .toc-brand { font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--gold); white-space:nowrap; }
+  .toc-links { display:flex; gap:1.25rem; flex-wrap:wrap; }
+  .toc-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; letter-spacing:0.05em; text-transform:uppercase; }
+  .toc-links a:hover { color:var(--gold); }
+
+  .wrapper { max-width:900px; margin:0 auto; padding:0 2rem; }
+
+  /* SECTIONS */
+  .page-section { border-bottom:2px solid var(--border); padding:4.5rem 0 4rem; }
+  .page-section:last-child { border-bottom:none; }
+  .page-label { display:inline-flex; align-items:center; gap:.5rem; font-size:.72rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-bottom:1.25rem; }
+  .page-label::before { content:''; display:block; width:24px; height:1px; background:var(--gold); }
+
+  /* NEW / UPDATED BADGES */
+  .badge-new { display:inline-block; background:#C0442A; color:#fff; font-size:.65rem; font-weight:500; letter-spacing:.08em; text-transform:uppercase; padding:2px 7px; border-radius:2px; vertical-align:middle; margin-left:8px; }
+  .badge-updated { display:inline-block; background:var(--blue); color:#fff; font-size:.65rem; font-weight:500; letter-spacing:.08em; text-transform:uppercase; padding:2px 7px; border-radius:2px; vertical-align:middle; margin-left:8px; }
+
+  h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.9rem,5vw,3rem); font-weight:600; line-height:1.15; color:var(--navy); margin-bottom:.5rem; }
+  h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.4rem,3vw,2rem); font-weight:600; line-height:1.2; color:var(--navy); margin:2.5rem 0 .75rem; }
+  h3 { font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:500; color:var(--navy); margin:1.5rem 0 .4rem; }
+  p { color:var(--muted); margin-bottom:1rem; font-size:.96rem; }
+  p strong { color:var(--text); font-weight:500; }
+  .lead { font-size:1.07rem; line-height:1.78; color:var(--text); max-width:700px; margin-bottom:1.75rem; }
+
+  .divider { border:none; border-top:1px solid var(--border); margin:2.5rem 0; }
+
+  /* BUTTONS */
+  .cta-bar { display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem; }
+  .btn-primary { display:inline-block; background:var(--gold); color:#fff; padding:.8rem 1.75rem; border-radius:2px; font-size:.9rem; font-weight:500; text-decoration:none; }
+  .btn-secondary { display:inline-block; background:transparent; color:var(--navy); padding:.8rem 1.75rem; border-radius:2px; font-size:.9rem; font-weight:500; text-decoration:none; border:1.5px solid var(--navy); }
+
+  /* STATS ROW */
+  .stats-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; background:var(--border); margin:2.5rem 0; border:1px solid var(--border); }
+  .stat-cell { background:#fff; padding:1.5rem 1.25rem; text-align:center; }
+  .stat-num { font-family:'Cormorant Garamond',serif; font-size:2.3rem; font-weight:600; color:var(--gold); display:block; line-height:1; }
+  .stat-desc { font-size:.78rem; color:var(--muted); margin-top:.3rem; }
+
+  /* CARDS */
+  .grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; margin:1.5rem 0; }
+  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.25rem; margin:1.5rem 0; }
+  .card { background:#fff; border:1px solid var(--border); padding:1.6rem; border-top:3px solid var(--gold); }
+  .card h3 { margin-top:0; }
+  .card p { font-size:.9rem; margin-bottom:.5rem; }
+  .card ul { padding-left:1.1rem; }
+  .card ul li { font-size:.87rem; color:var(--muted); margin-bottom:.3rem; }
+
+  /* CALLOUTS */
+  .callout { background:var(--gold-light); border-left:4px solid var(--gold); padding:1.4rem 1.7rem; margin:1.75rem 0; }
+  .callout p { color:var(--text); margin:0; font-size:.95rem; }
+  .callout-green { background:var(--green-light); border-left-color:var(--green); }
+  .callout-blue { background:var(--blue-light); border-left-color:var(--blue); }
+
+  /* FREE BADGE */
+  .free-badge { display:inline-block; background:var(--green-light); color:var(--green); font-size:.72rem; font-weight:500; letter-spacing:.08em; text-transform:uppercase; padding:2px 8px; border-radius:2px; margin-bottom:.5rem; }
+
+  /* ══════════════════════════════════════
+     THREE-TIER SYSTEM  (NEW)
+  ══════════════════════════════════════ */
+  .tier-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0; margin:2rem 0; border:1px solid var(--border); }
+
+  .tier-card { padding:2rem 1.75rem; background:#fff; border-right:1px solid var(--border); position:relative; }
+  .tier-card:last-child { border-right:none; }
+
+  .tier-badge {
+    display:inline-block;
+    font-size:.7rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase;
+    padding:3px 10px; border-radius:2px; margin-bottom:1rem;
+  }
+  .tier-badge.t1 { background:#EBF3EE; color:var(--tier1); }
+  .tier-badge.t2 { background:#E8F0FA; color:var(--tier2); }
+  .tier-badge.t3 { background:#F0ECF9; color:var(--tier3); }
+
+  .tier-card h3 { margin-top:0; font-size:1.1rem; }
+  .tier-card.t1 h3 { color:var(--tier1); }
+  .tier-card.t2 h3 { color:var(--tier2); }
+  .tier-card.t3 h3 { color:var(--tier3); }
+
+  .tier-price {
+    font-family:'Cormorant Garamond',serif;
+    font-size:2rem; font-weight:600; line-height:1;
+    margin:1rem 0 .25rem;
+  }
+  .tier-price-note { font-size:.78rem; color:var(--muted); margin-bottom:1rem; }
+
+  .tier-card ul { padding-left:1.1rem; margin-top:.75rem; }
+  .tier-card ul li { font-size:.87rem; color:var(--muted); margin-bottom:.35rem; }
+
+  .tier-accent-t1 { border-top:4px solid var(--tier1); }
+  .tier-accent-t2 { border-top:4px solid var(--tier2); }
+  .tier-accent-t3 { border-top:4px solid var(--tier3); }
+
+  /* POPULAR BANNER */
+  .popular-banner {
+    background:var(--tier2);
+    color:#fff;
+    font-size:.7rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase;
+    text-align:center; padding:5px;
+    margin:-2rem -1.75rem 1.5rem;
+  }
+
+  /* ══════════════════════════════════════
+     WORKSHOPS  (NEW)
+  ══════════════════════════════════════ */
+  .workshop-card {
+    background:#fff;
+    border:1px solid var(--border);
+    padding:1.75rem;
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:1rem 2rem;
+    align-items:start;
+    margin-bottom:1.25rem;
+  }
+  .workshop-title { font-weight:500; font-size:1rem; color:var(--navy); margin-bottom:.3rem; }
+  .workshop-desc { font-size:.88rem; color:var(--muted); margin:0; }
+  .workshop-meta { font-size:.78rem; color:var(--muted); margin-top:.5rem; }
+  .workshop-price-block { text-align:right; white-space:nowrap; }
+  .workshop-price { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; color:var(--navy); display:block; line-height:1; }
+  .workshop-price-label { font-size:.75rem; color:var(--muted); }
+
+  /* ══════════════════════════════════════
+     CUSTOM COURSE  (NEW)
+  ══════════════════════════════════════ */
+  .course-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:.9rem; }
+  .course-table th { text-align:left; padding:.75rem 1rem; background:var(--navy); color:#fff; font-weight:500; font-size:.8rem; letter-spacing:.04em; }
+  .course-table td { padding:.75rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+  .course-table tr:last-child td { border-bottom:none; }
+  .course-table tr:nth-child(even) td { background:#fff; }
+  .course-table tr:nth-child(odd) td { background:var(--cream); }
+  .price-col { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:600; color:var(--navy); white-space:nowrap; }
+
+  /* STEPS */
+  .steps-list { margin:2rem 0; }
+  .step { display:grid; grid-template-columns:52px 1fr; gap:1.25rem; margin-bottom:2rem; align-items:start; }
+  .step-num { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:600; color:var(--gold); line-height:1; padding-top:2px; }
+  .step h3 { margin-top:0; }
+
+  /* TESTIMONIALS */
+  .testimonial-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:1.5rem; margin:2rem 0; }
+  .t-card { background:#fff; border:1px solid var(--border); padding:1.75rem; position:relative; }
+  .t-card::before { content:'"'; font-family:'Cormorant Garamond',serif; font-size:4rem; color:var(--gold-light); position:absolute; top:.5rem; left:1rem; line-height:1; }
+  .t-text { font-size:.92rem; color:var(--text); line-height:1.65; padding-top:1.5rem; margin-bottom:1rem; }
+  .t-author { font-size:.82rem; font-weight:500; color:var(--navy); }
+  .t-role { font-size:.78rem; color:var(--muted); }
+
+  /* FAQ */
+  .faq-list { margin:2rem 0; }
+  .faq-item { border-bottom:1px solid var(--border); padding:1.25rem 0; }
+  .faq-q { font-weight:500; color:var(--navy); font-size:.97rem; margin-bottom:.5rem; }
+  .faq-a { font-size:.92rem; color:var(--muted); }
+
+  /* TIMELINE */
+  .timeline { margin:2rem 0; border-left:2px solid var(--gold); padding-left:2rem; }
+  .timeline-event { margin-bottom:2rem; position:relative; }
+  .timeline-event::before { content:''; width:10px; height:10px; background:var(--gold); border-radius:50%; position:absolute; left:-2.6rem; top:5px; }
+  .timeline-year { font-size:.78rem; font-weight:500; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; margin-bottom:.25rem; }
+  .timeline-event h3 { margin-top:0; font-size:1rem; }
+
+  /* VALUES */
+  .values-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1.25rem; margin:2rem 0; }
+  .value-card { padding:1.5rem 1.25rem; background:var(--navy); color:#fff; }
+  .value-card h3 { color:var(--gold); font-size:.95rem; margin-top:0; margin-bottom:.5rem; }
+  .value-card p { color:rgba(255,255,255,0.7); font-size:.85rem; margin:0; }
+
+  /* CONTACT */
+  .contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1.5rem; margin:2rem 0; }
+  .contact-item { padding:1.25rem; background:#fff; border:1px solid var(--border); }
+  .contact-label { font-size:.72rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:.4rem; }
+  .contact-value { font-size:.97rem; color:var(--navy); font-weight:500; }
+
+  /* FOOTER NOTE */
+  .print-note { background:var(--navy); color:rgba(255,255,255,0.6); font-size:.8rem; padding:1rem 2rem; text-align:center; }
+  .print-note strong { color:#fff; }
+
+  @media(max-width:600px) {
+    .tier-grid { grid-template-columns:1fr; }
+    .workshop-card { grid-template-columns:1fr; }
+    .workshop-price-block { text-align:left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="toc">
+  <div class="toc-inner">
+    <span class="toc-brand">Pampered Companion Care — Copy v2</span>
+    <div class="toc-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#tech">Tech Tiers ★</a>
+      <a href="#workshops">Workshops ★</a>
+      <a href="#custom">Custom Courses ★</a>
+      <a href="#approach">Approach</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faqs">FAQs</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrapper">
+
+<!-- ═══════════════════════════════════
+     PAGE 1 — HOME  (Updated)
+═══════════════════════════════════ -->
+<section class="page-section" id="home">
+  <span class="page-label">Page — Home <span class="badge-updated">Updated</span></span>
+
+  <h1>Dayton's Most Trusted<br>Senior Companion Care</h1>
+  <p class="lead">We bring compassionate in-home companionship, personalized daily support, and free cybersecurity education to seniors across Dayton and Montgomery County — because every older adult deserves safety, dignity, and connection.</p>
+
+  <div class="cta-bar">
+    <a class="btn-primary" href="tel:3264673161">Call (326) 467-3161</a>
+    <a class="btn-secondary" href="#services">See Our Services</a>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-cell"><span class="stat-num">30+</span><p class="stat-desc">Years serving Dayton seniors</p></div>
+    <div class="stat-cell"><span class="stat-num">8</span><p class="stat-desc">Years U.S. Air Force security expertise</p></div>
+    <div class="stat-cell"><span class="stat-num">3</span><p class="stat-desc">Technology service tiers</p></div>
+    <div class="stat-cell"><span class="stat-num">Free</span><p class="stat-desc">Cybersecurity &amp; fraud education</p></div>
+  </div>
+
+  <h2>Care That Looks Out for the Whole Person</h2>
+  <p>At Pampered Companion Care, we believe senior care should go beyond checking boxes. It should protect, uplift, and genuinely connect. That's why we are the only companion care service in the Dayton area that combines warm, in-home companionship with a full three-tier technology education program and hands-on cybersecurity training — keeping seniors safe from both daily challenges and the growing threat of digital fraud.</p>
+  <p>We are not a national franchise. We are a Dayton-born, community-rooted business built on a lifetime of service, guided by one belief: <strong>every senior in our community deserves to be safe, connected, and treated with the dignity they have earned.</strong></p>
+
+  <h2>What We Offer</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3>🤝 Companion Care</h3>
+      <p>Meaningful companionship that combats loneliness and brightens every day — from heartfelt conversation to shared activities and gentle encouragement.</p>
+    </div>
+    <div class="card">
+      <h3>📱 Digital Empowerment — 3 Tiers</h3>
+      <p>From first-time smartphone setup to advanced digital independence — our three-tier technology education system meets every senior exactly where they are.</p>
+    </div>
+    <div class="card">
+      <h3>🛡️ Fraud &amp; Scam Protection</h3>
+      <span class="free-badge">Always Free</span>
+      <p>In-person cybersecurity education brought directly to your home, senior center, church, or community organization throughout Dayton and Montgomery County.</p>
+    </div>
+    <div class="card">
+      <h3>⭐ Personalized Assistance</h3>
+      <p>Tailored support for daily living — errands, appointments, technology coaching, and more — always built around individual preferences and pace.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>"Pampered Companion Care made a profound difference in my mother's life. The caregivers are kind, attentive, and truly treat her with the respect and warmth she deserves."<br><strong>— Sarah K., Dayton</strong></p>
+  </div>
+
+  <h2>Serving Dayton &amp; Montgomery County, Ohio</h2>
+  <p>Whether you're looking for ongoing companion care, a one-time technology session, a community fraud prevention presentation, or a fully customized digital skills course — we are here. Call us for a free consultation with no pressure and no obligation.</p>
+  <div class="cta-bar">
+    <a class="btn-primary" href="mailto:info@pamperedcompanioncare.com">Get in Touch</a>
+    <a class="btn-secondary" href="#faqs">Read Our FAQs</a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     PAGE 2 — OUR SERVICES  (Updated)
+═══════════════════════════════════ -->
+<section class="page-section" id="services">
+  <span class="page-label">Page — Our Services <span class="badge-updated">Updated</span></span>
+
+  <h1>Our Services</h1>
+  <p class="lead">Pampered Companion Care delivers a full spectrum of senior support — from daily in-home companionship to personalized technology coaching, workshops, customized digital courses, and free community fraud education. Every service is tailored to the individual and delivered with patience, respect, and genuine care.</p>
+
+  <!-- COMPANION CARE -->
+  <h2>Companion Care</h2>
+  <p>Loneliness is one of the most serious health risks facing seniors today. Our companion care pairs each client with a caregiver who shows up consistently, listens genuinely, and brings warmth and purpose to every visit.</p>
+  <div class="grid-2">
+    <div class="card"><h3>Conversation &amp; Emotional Support</h3><p>Meaningful conversation on topics the senior loves — family, history, hobbies, faith, or simply how their day is going.</p></div>
+    <div class="card"><h3>Activities &amp; Engagement</h3><p>Tailored activities by ability and interest — card games, puzzles, crafts, reading together, walking, gardening, music, and more.</p></div>
+    <div class="card"><h3>Medication &amp; Routine Reminders</h3><p>Friendly reminders for medications, hydration, meals, and daily routines — supporting independence without taking it away.</p></div>
+    <div class="card"><h3>Family Check-Ins &amp; Peace of Mind</h3><p>Regular updates so family always knows their loved one is safe, engaged, and in good hands — even from a distance.</p></div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PERSONALIZED ASSISTANCE -->
+  <h2>Personalized Assistance</h2>
+  <p>Our personalized assistance services are built around what each individual actually needs — not a one-size-fits-all checklist. We adapt to your loved one's schedule, preferences, and lifestyle.</p>
+  <div class="grid-2">
+    <div class="card"><h3>Errands &amp; Grocery Shopping</h3><p>Grocery runs, pharmacy pickups, and daily errands — saving energy for what matters most.</p></div>
+    <div class="card"><h3>Appointment Accompaniment</h3><p>Transportation to and attendance at medical, therapy, hair, and social appointments.</p></div>
+    <div class="card"><h3>Light Housekeeping Support</h3><p>Help maintaining a clean, safe, and comfortable home — dishes, laundry, tidying, and organization.</p></div>
+    <div class="card"><h3>Technology Coaching</h3><p>Hands-on help with smartphones, tablets, computers, and video calling — keeping seniors connected to family.</p></div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- TECHNOLOGY SERVICES — 3 TIERS -->
+  <h2 id="tech">Digital Empowerment — Three-Tier Technology Services <span class="badge-new">New</span></h2>
+  <p>Not every senior starts in the same place with technology — and not every senior needs the same level of support. That's why we built a structured, three-tier technology education system designed to meet each person exactly where they are, and take them as far as they want to go.</p>
+  <p>All sessions are delivered in-home, at a comfortable pace, with real devices, real patience, and zero judgment. No jargon. No rushing. Just clear, practical learning that builds genuine confidence.</p>
+
+  <div class="tier-grid">
+
+    <!-- TIER 1 -->
+    <div class="tier-card tier-accent-t1">
+      <span class="tier-badge t1">Tier 1 — Foundation</span>
+      <h3>Getting Comfortable with Technology</h3>
+      <p style="font-size:.88rem;color:var(--muted);">For seniors who are brand new to digital devices or feel overwhelmed by them. No experience needed — we start from the very beginning.</p>
+      <div class="tier-price" style="color:var(--tier1);">$45<span style="font-size:1.1rem;font-weight:400;">/hr</span></div>
+      <p class="tier-price-note">or $160 for a 4-session starter package</p>
+      <ul>
+        <li>Turning devices on/off, charging, basic navigation</li>
+        <li>Making and receiving phone calls and texts</li>
+        <li>Taking and sharing photos</li>
+        <li>Setting up and using email basics</li>
+        <li>Safe internet browsing</li>
+        <li>Recognizing common digital scams</li>
+      </ul>
+    </div>
+
+    <!-- TIER 2 -->
+    <div class="tier-card tier-accent-t2">
+      <div class="popular-banner">Most Popular</div>
+      <span class="tier-badge t2">Tier 2 — Confident User</span>
+      <h3>Everyday Digital Independence</h3>
+      <p style="font-size:.88rem;color:var(--muted);">For seniors who know the basics and want to feel truly confident — video calling grandchildren, managing accounts, exploring helpful apps, and staying safe online.</p>
+      <div class="tier-price" style="color:var(--tier2);">$55<span style="font-size:1.1rem;font-weight:400;">/hr</span></div>
+      <p class="tier-price-note">or $200 for a 4-session confidence package</p>
+      <ul>
+        <li>Video calling (FaceTime, Zoom, WhatsApp)</li>
+        <li>Social media setup and safe use</li>
+        <li>Online shopping and account security</li>
+        <li>Health apps, reminders, and calendars</li>
+        <li>Streaming services (Netflix, YouTube, Spotify)</li>
+        <li>Password management and account protection</li>
+        <li>Recognizing phishing, scam calls, and fake websites</li>
+      </ul>
+    </div>
+
+    <!-- TIER 3 -->
+    <div class="tier-card tier-accent-t3">
+      <span class="tier-badge t3">Tier 3 — Advanced Mastery</span>
+      <h3>Advanced Digital Skills &amp; Security</h3>
+      <p style="font-size:.88rem;color:var(--muted);">For seniors who are comfortable day-to-day and want to go further — managing finances online, understanding AI tools, advanced security, and full device mastery.</p>
+      <div class="tier-price" style="color:var(--tier3);">$70<span style="font-size:1.1rem;font-weight:400;">/hr</span></div>
+      <p class="tier-price-note">or $260 for a 4-session mastery package</p>
+      <ul>
+        <li>Online banking and financial account security</li>
+        <li>Cloud storage, backups, and file management</li>
+        <li>Advanced privacy settings and two-factor authentication</li>
+        <li>Understanding AI tools (voice assistants, ChatGPT basics)</li>
+        <li>Smart home device setup (Alexa, Google Home)</li>
+        <li>Full cybersecurity audit of devices and accounts</li>
+        <li>Troubleshooting common tech problems independently</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="callout callout-blue">
+    <p><strong>Not sure which tier is right?</strong> Call us at (326) 467-3161 for a free 15-minute phone assessment. We'll recommend the right starting point based on your loved one's comfort level and goals. Seniors can also move between tiers as their skills and confidence grow — there is no pressure to stay at one level.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FRAUD PROTECTION -->
+  <h2>Fraud &amp; Cybersecurity Education</h2>
+  <span class="free-badge">100% Free — No Strings Attached</span>
+  <div class="callout callout-green" style="margin-top:1rem">
+    <p><strong>Protecting seniors from fraud and scams should never come with a price tag.</strong> Pampered Companion Care proudly offers free, in-person cybersecurity and scam awareness education — brought directly to homes, businesses, senior centers, churches, and community organizations throughout Dayton and Montgomery County.</p>
+  </div>
+  <div class="grid-2">
+    <div class="card"><h3>In-Home Fraud Education</h3><p>One-on-one sessions covering the most common scams targeting seniors — phone fraud, phishing, fake tech support, grandparent scams, Medicare fraud, and more.</p></div>
+    <div class="card"><h3>Community &amp; Group Presentations</h3><p>Engaging presentations for senior centers, churches, community organizations, and assisted living facilities. We come to you, at no cost.</p></div>
+    <div class="card"><h3>Digital Safety Checkups</h3><p>A hands-on review of a senior's devices, accounts, and online habits — identifying vulnerabilities and putting simple protections in place.</p></div>
+    <div class="card"><h3>Family Education Sessions</h3><p>Sessions for adult children and family members so everyone understands how to recognize and respond to digital threats.</p></div>
+  </div>
+
+  <div class="cta-bar" style="margin-top:2rem">
+    <a class="btn-primary" href="tel:3264673161">Schedule a Free Visit — (326) 467-3161</a>
+    <a class="btn-secondary" href="mailto:info@pamperedcompanioncare.com">Request a Community Presentation</a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     PAGE — WORKSHOPS  (NEW)
+═══════════════════════════════════ -->
+<section class="page-section" id="workshops">
+  <span class="page-label">Page — Workshops &amp; Group Learning <span class="badge-new">New Page</span></span>
+
+  <h1>Workshops &amp; Group Learning</h1>
+  <p class="lead">Our workshops bring practical technology education and cybersecurity training directly to your community — in a relaxed, judgment-free environment where every question is welcome. Designed specifically for older adults, our sessions are led in plain language with real devices and real-life examples.</p>
+
+  <p>We offer workshops at senior centers, churches, libraries, assisted living facilities, community organizations, and businesses throughout Dayton and Montgomery County. Group sessions are available in half-day and full-day formats, and every workshop can be customized for your audience.</p>
+
+  <hr class="divider">
+
+  <h2>Workshop Menu &amp; Pricing</h2>
+  <p style="font-size:.88rem;color:var(--muted);margin-bottom:1.5rem;">All prices are per session. Group size, location, and travel distance may affect final pricing — contact us for a custom quote for your organization. <strong style="color:var(--text);">Fraud &amp; Scam Awareness workshops are always free of charge.</strong></p>
+
+  <!-- WORKSHOP CARDS -->
+  <div class="workshop-card">
+    <div>
+      <p class="workshop-title">Smartphone &amp; Tablet Basics <span class="free-badge" style="font-size:.68rem;">Tier 1</span></p>
+      <p class="workshop-desc">A hands-on introduction to smartphones and tablets for seniors with no prior experience. Covers device basics, calling, texting, photos, and email in a step-by-step, judgment-free setting.</p>
+      <p class="workshop-meta">Duration: 2 hours &nbsp;·&nbsp; Group size: up to 12 &nbsp;·&nbsp; Bring your own device or use ours</p>
+    </div>
+    <div class="workshop-price-block">
+      <span class="workshop-price">$150</span>
+      <span class="workshop-price-label">per session</span>
+    </div>
+  </div>
+
+  <div class="workshop-card">
+    <div>
+      <p class="workshop-title">Staying Connected — Video Calls, Social Media &amp; Apps <span class="free-badge" style="font-size:.68rem;background:var(--blue-light);color:var(--blue);">Tier 2</span></p>
+      <p class="workshop-desc">Focused on keeping seniors connected to family and community. Covers FaceTime, Zoom, WhatsApp, Facebook basics, photo sharing, and everyday apps. Attendees leave able to video call a family member the same day.</p>
+      <p class="workshop-meta">Duration: 2 hours &nbsp;·&nbsp; Group size: up to 12 &nbsp;·&nbsp; Bring your own device</p>
+    </div>
+    <div class="workshop-price-block">
+      <span class="workshop-price">$150</span>
+      <span class="workshop-price-label">per session</span>
+    </div>
+  </div>
+
+  <div class="workshop-card">
+    <div>
+      <p class="workshop-title">Online Safety &amp; Fraud Prevention <span class="free-badge">Always Free</span></p>
+      <p class="workshop-desc">Our flagship community workshop. Covers phone scams, email phishing, fake tech support calls, grandparent scams, Medicare fraud, romance scams, and practical steps to protect against each. The most requested workshop in Dayton.</p>
+      <p class="workshop-meta">Duration: 1.5 – 2 hours &nbsp;·&nbsp; Any group size &nbsp;·&nbsp; No devices required</p>
+    </div>
+    <div class="workshop-price-block">
+      <span class="workshop-price" style="color:var(--green);">FREE</span>
+      <span class="workshop-price-label">always</span>
+    </div>
+  </div>
+
+  <div class="workshop-card">
+    <div>
+      <p class="workshop-title">Online Banking &amp; Account Security <span class="free-badge" style="font-size:.68rem;background:var(--purple-light);color:var(--purple);">Tier 3</span></p>
+      <p class="workshop-desc">A thorough, practical session on managing finances safely online. Covers account setup, secure login practices, two-factor authentication, spotting financial fraud, and understanding bank alerts. Ideal for seniors managing their own finances.</p>
+      <p class="workshop-meta">Duration: 2 hours &nbsp;·&nbsp; Group size: up to 10 &nbsp;·&nbsp; Bring your own device</p>
+    </div>
+    <div class="workshop-price-block">
+      <span class="workshop-price">$175</span>
+      <span class="workshop-price-label">per session</span>
+    </div>
+  </div>
+
+  <div class="workshop-card">
+    <div>
+      <p class="workshop-title">Half-Day Digital Empowerment Intensive</p>
+      <p class="workshop-desc">A comprehensive four-hour experience combining Tier 1 and Tier 2 content — ideal for assisted living facilities or senior centers wanting to give residents a full technology foundation in a single event. Includes a printed take-home reference guide.</p>
+      <p class="workshop-meta">Duration: 4 hours &nbsp;·&nbsp; Group size: up to 15 &nbsp;·&nbsp; Includes printed materials</p>
+    </div>
+    <div class="workshop-price-block">
+      <span class="workshop-price">$350</span>
+      <span class="workshop-price-label">per session</span>
+    </div>
+  </div>
+
+  <div class="workshop-card">
+    <div>
+      <p class="workshop-title">Full-Day Senior Tech Day</p>
+      <p class="workshop-desc">A full-day event covering all three technology tiers plus fraud prevention — perfect for large senior centers, community events, and organizational programming. Includes three rotating workshops, break time, and one-on-one device support throughout the day.</p>
+      <p class="workshop-meta">Duration: 6 hours &nbsp;·&nbsp; Group size: 20+ &nbsp;·&nbsp; Includes printed materials &amp; 1:1 support</p>
+    </div>
+    <div class="workshop-price-block">
+      <span class="workshop-price">$600</span>
+      <span class="workshop-price-label">per event</span>
+    </div>
+  </div>
+
+  <div class="callout callout-blue">
+    <p><strong>All workshop pricing is based on the Dayton, Ohio market.</strong> Comparable group technology education sessions in the region are priced between $125 and $200 per session. Our pricing reflects 30+ years of caregiving experience and military-grade cybersecurity expertise — while remaining competitive and accessible for community organizations. Discounts available for non-profit organizations and recurring bookings.</p>
+  </div>
+
+  <div class="cta-bar" style="margin-top:2rem">
+    <a class="btn-primary" href="tel:3264673161">Book a Workshop — (326) 467-3161</a>
+    <a class="btn-secondary" href="mailto:info@pamperedcompanioncare.com">Request a Custom Quote</a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     PAGE — CUSTOMIZED COURSES  (NEW)
+═══════════════════════════════════ -->
+<section class="page-section" id="custom">
+  <span class="page-label">Page — Customized Courses <span class="badge-new">New Page</span></span>
+
+  <h1>Customized Technology Courses</h1>
+  <p class="lead">Every senior's learning journey is different. Our customized course program lets individuals, families, senior centers, and organizations build a structured, multi-session digital education experience tailored to specific goals, devices, skill levels, and schedules.</p>
+
+  <p>Whether you want a personal 6-session course to take a senior from smartphone basics to confident independence — or a full organizational curriculum covering all three technology tiers across 12 weeks — we design and deliver it for you.</p>
+
+  <hr class="divider">
+
+  <h2>What Makes a Course "Customized"?</h2>
+  <div class="grid-3">
+    <div class="card"><h3>Tailored Content</h3><p>Every lesson is built around the senior's actual devices, specific apps they want to use, and the real-life goals that matter to them — not a generic curriculum.</p></div>
+    <div class="card"><h3>Flexible Pacing</h3><p>Sessions are scheduled at the frequency that works — weekly, twice weekly, or monthly. Lessons build on each other in a logical sequence so nothing feels rushed.</p></div>
+    <div class="card"><h3>Printed Take-Home Guides</h3><p>Every customized course includes printed step-by-step reference guides written in plain language, so seniors can practice on their own between sessions.</p></div>
+    <div class="card"><h3>Family Coordination</h3><p>With permission, we keep family members informed of progress and can design specific sessions around helping seniors connect with particular family members.</p></div>
+    <div class="card"><h3>Progress Tracking</h3><p>We document what each senior has learned and can accomplished, helping families understand the growth and giving seniors a sense of real achievement.</p></div>
+    <div class="card"><h3>Security Built In</h3><p>Every course includes age-appropriate cybersecurity education woven throughout — so digital confidence and digital safety grow together.</p></div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>Customized Course Pricing</h2>
+  <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem;">Pricing is based on Dayton-area market rates for personalized senior technology education. Comparable private tutoring and technology coaching services in the Ohio market range from $40 to $85 per hour. Our packages are priced to be competitive while reflecting genuine expertise, printed materials, and ongoing coordination.</p>
+
+  <table class="course-table">
+    <thead>
+      <tr>
+        <th>Package</th>
+        <th>Sessions</th>
+        <th>Best For</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Starter Course</strong><br><span style="font-size:.8rem;color:var(--muted);">Tier 1 focus</span></td>
+        <td>4 sessions<br><span style="font-size:.8rem;color:var(--muted);">1 hr each</span></td>
+        <td>Seniors brand new to technology who need a gentle, structured introduction over 4 weeks.</td>
+        <td class="price-col">$160</td>
+      </tr>
+      <tr>
+        <td><strong>Confidence Course</strong><br><span style="font-size:.8rem;color:var(--muted);">Tier 1–2 blend</span></td>
+        <td>6 sessions<br><span style="font-size:.8rem;color:var(--muted);">1 hr each</span></td>
+        <td>Seniors who know the very basics and want to build real day-to-day independence with their devices.</td>
+        <td class="price-col">$240</td>
+      </tr>
+      <tr>
+        <td><strong>Independence Course</strong><br><span style="font-size:.8rem;color:var(--muted);">Tier 2 focus</span></td>
+        <td>8 sessions<br><span style="font-size:.8rem;color:var(--muted);">1 hr each</span></td>
+        <td>Seniors ready to master video calls, apps, online shopping, health tools, and safe social media use.</td>
+        <td class="price-col">$320</td>
+      </tr>
+      <tr>
+        <td><strong>Mastery Course</strong><br><span style="font-size:.8rem;color:var(--muted);">Tier 2–3 blend</span></td>
+        <td>10 sessions<br><span style="font-size:.8rem;color:var(--muted);">1 hr each</span></td>
+        <td>Seniors who are comfortable day-to-day and want to advance to online banking, advanced security, cloud storage, and AI tools.</td>
+        <td class="price-col">$390</td>
+      </tr>
+      <tr>
+        <td><strong>Full Journey Course</strong><br><span style="font-size:.8rem;color:var(--muted);">All 3 tiers</span></td>
+        <td>12 sessions<br><span style="font-size:.8rem;color:var(--muted);">1 hr each</span></td>
+        <td>The complete experience — from device basics to advanced digital mastery. Includes printed guides for every module.</td>
+        <td class="price-col">$450</td>
+      </tr>
+      <tr>
+        <td><strong>Organizational Curriculum</strong><br><span style="font-size:.8rem;color:var(--muted);">Senior centers &amp; facilities</span></td>
+        <td>Custom<br><span style="font-size:.8rem;color:var(--muted);">Group format</span></td>
+        <td>A fully designed group curriculum for assisted living facilities, senior centers, or community organizations. Includes facilitator guides and printed materials.</td>
+        <td class="price-col">From $500</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <p><strong>All packages include:</strong> a free 30-minute needs assessment before the course begins, printed take-home reference guides, progress notes shared with family (with permission), and a follow-up check-in call 2 weeks after the final session.</p>
+  </div>
+
+  <div class="callout callout-blue">
+    <p><strong>How our pricing compares:</strong> In the Dayton and greater Ohio market, private technology tutoring for seniors ranges from $40–$85 per hour. Our per-session rate within packages works out to $37–$45 — below market average — because we believe ongoing digital education should be accessible to the seniors who need it most. Organizational curriculum pricing is negotiated based on group size and program scope.</p>
+  </div>
+
+  <h2>How the Customized Course Process Works</h2>
+  <div class="steps-list">
+    <div class="step">
+      <span class="step-num">01</span>
+      <div><h3>Free Needs Assessment</h3><p>We start with a 30-minute call or in-person visit to understand the senior's current comfort level, devices, goals, and any specific challenges they want to overcome. No charge, no commitment.</p></div>
+    </div>
+    <div class="step">
+      <span class="step-num">02</span>
+      <div><h3>Course Design</h3><p>We design a custom lesson plan based on that assessment — choosing the right tier(s), sequence of topics, and pacing. We share the plan with the family for input before starting.</p></div>
+    </div>
+    <div class="step">
+      <span class="step-num">03</span>
+      <div><h3>In-Home Sessions</h3><p>Sessions are delivered in the senior's home on a schedule that works for them. Every session ends with a simple practice task they can do on their own before the next visit.</p></div>
+    </div>
+    <div class="step">
+      <span class="step-num">04</span>
+      <div><h3>Printed Guides &amp; Ongoing Support</h3><p>Each module comes with a printed, easy-to-read reference guide. Between sessions, seniors can call or text us with quick questions — we don't disappear between visits.</p></div>
+    </div>
+    <div class="step">
+      <span class="step-num">05</span>
+      <div><h3>Completion &amp; Follow-Up</h3><p>At the end of the course, we conduct a final review session and a 2-week follow-up call to make sure the learning has stuck and the senior feels genuinely confident.</p></div>
+    </div>
+  </div>
+
+  <div class="cta-bar">
+    <a class="btn-primary" href="tel:3264673161">Start with a Free Assessment</a>
+    <a class="btn-secondary" href="mailto:info@pamperedcompanioncare.com">Ask About Organizational Courses</a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     PAGE — OUR APPROACH  (Updated)
+═══════════════════════════════════ -->
+<section class="page-section" id="approach">
+  <span class="page-label">Page — Our Approach <span class="badge-updated">Updated</span></span>
+
+  <h1>Our Approach</h1>
+  <p class="lead">We do not believe in one-size-fits-all care. Every senior has a unique story, a unique set of needs, and a unique vision for what a good day looks like. Our approach begins with listening — and builds from there.</p>
+
+  <h2>Care That Starts with Listening</h2>
+  <p>Before we ever schedule a regular visit, we take time to truly understand the person we will be serving. What are their interests? What does their ideal day look like? What worries them? What makes them laugh? That conversation shapes everything that follows.</p>
+  <p>Our caregivers and technology educators are selected not only for reliability and skill, but for warmth, patience, and genuine curiosity about people. Every match between caregiver and client is thoughtful — because the relationship is what makes care work.</p>
+
+  <hr class="divider">
+
+  <h2>How It Works</h2>
+  <div class="steps-list">
+    <div class="step"><span class="step-num">01</span><div><h3>Free Consultation</h3><p>A free, no-obligation conversation — by phone or in person — to learn about the senior's situation, needs, and goals. For technology services, we also conduct a brief device and skill assessment at no charge.</p></div></div>
+    <div class="step"><span class="step-num">02</span><div><h3>Personalized Plan</h3><p>Based on that conversation, we develop a tailored care plan or technology course that outlines specific support, schedule, and activities. Plans are flexible and evolve over time.</p></div></div>
+    <div class="step"><span class="step-num">03</span><div><h3>Thoughtful Match</h3><p>We carefully match each client with a caregiver whose personality and approach are a genuine fit. Consistency is the goal — a trusted relationship built over time, not a rotating roster of strangers.</p></div></div>
+    <div class="step"><span class="step-num">04</span><div><h3>Ongoing Care &amp; Communication</h3><p>Care does not end at the visit. We maintain open communication with families and adapt to changing needs as they arise.</p></div></div>
+    <div class="step"><span class="step-num">05</span><div><h3>Safety Education Throughout</h3><p>For all clients, we layer in free cybersecurity and fraud education — because protecting seniors digitally is as important as protecting their physical well-being.</p></div></div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>What Makes Us Different</h2>
+  <div class="grid-2">
+    <div class="card"><h3>Locally Owned, Community Rooted</h3><p>Not a franchise. Not a call center. Born in Dayton, built for Dayton. When you call us, you speak to someone who knows your community personally.</p></div>
+    <div class="card"><h3>Three-Tier Technology System</h3><p>The only companion care provider in Dayton with a structured, three-tier digital education program — meeting each senior at their level and building confidence step by step.</p></div>
+    <div class="card"><h3>Military-Grade Security Expertise</h3><p>Our founder's eight years as a U.S. Air Force Security Police officer gives us a perspective on safety and threat awareness that far exceeds what typical care agencies offer.</p></div>
+    <div class="card"><h3>Dignity Is Non-Negotiable</h3><p>Every decision is guided by a deep commitment to treating every senior as the full, whole, valued person they are — in care visits and in technology sessions alike.</p></div>
+  </div>
+
+  <div class="callout">
+    <p>We believe technology and human connection are not opposites. They are partners. Our approach brings both together in a way that is practical, compassionate, and uniquely suited to the seniors we serve in Dayton.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     PAGE — ABOUT US  (Unchanged)
+═══════════════════════════════════ -->
+<section class="page-section" id="about">
+  <span class="page-label">Page — About Us</span>
+
+  <h1>Built From a Lifetime<br>of Love and Service</h1>
+  <p class="lead">Pampered Companion Care was not built from a business plan. It was built from decades of real caregiving, military-grade security expertise, and an unshakeable belief that every senior in Dayton deserves to feel safe, connected, and truly valued.</p>
+
+  <h2>Our Founder's Story</h2>
+  <p>Growing up in Dayton, Ohio, family was everything — and at the center of his family was his grandmother. That bond shaped the way he sees every senior he serves today: not as a client, but as someone's grandmother, someone's grandfather, someone who matters completely.</p>
+  <p>In 1993, that love for seniors led him into elderly care, where he began working as a home health aide across the Dayton area. What started as a calling became a career. And that career became a mission.</p>
+  <p>Running alongside his love of people was a lifelong passion for technology. At just 17 years old — with nothing but a couple of programming books and a mind built for problem-solving — he wrote his first computer program. No classroom. No instructor. Just curiosity and determination.</p>
+  <p>That drive led him to serve his country. <strong>He spent eight years as a Security Police officer in the United States Air Force, protecting nuclear weapons and developing deep, real-world expertise in security</strong> — the kind most people only read about.</p>
+  <p>After his military service, he brought it all back home to Dayton: the caregiving heart, the technology knowledge, and the security training. He put it all in service of the community he has always loved.</p>
+
+  <hr class="divider">
+
+  <h2>Our Journey</h2>
+  <div class="timeline">
+    <div class="timeline-event"><p class="timeline-year">Early Life</p><h3>Roots in Dayton, Ohio</h3><p>Raised in Dayton with deep family values and a formative bond with his grandmother that would shape everything to come.</p></div>
+    <div class="timeline-event"><p class="timeline-year">Age 17</p><h3>Self-Taught Programmer</h3><p>Taught himself to code from books — writing his first computer program entirely on his own, sparking a lifelong love of technology.</p></div>
+    <div class="timeline-event"><p class="timeline-year">1993</p><h3>Began Career in Elderly Care</h3><p>Entered the field as a home health aide, providing hands-on companion and personal care to seniors across the Dayton area.</p></div>
+    <div class="timeline-event"><p class="timeline-year">8 Years</p><h3>U.S. Air Force Security Police</h3><p>Served as Security Police in the United States Air Force, providing protection for nuclear assets and building deep real-world expertise in security and threat assessment.</p></div>
+    <div class="timeline-event"><p class="timeline-year">Today</p><h3>Pampered Companion Care</h3><p>Founded to unite compassionate senior care with a structured three-tier technology education system and free cybersecurity training — a one-of-a-kind service built for Dayton.</p></div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>What We Stand For</h2>
+  <div class="values-grid">
+    <div class="value-card"><h3>Dignity</h3><p>Every senior is treated with the deep respect they have earned. No exceptions. No shortcuts.</p></div>
+    <div class="value-card"><h3>Compassion</h3><p>We show up with genuine warmth — not as a service provider, but as someone who truly cares.</p></div>
+    <div class="value-card"><h3>Protection</h3><p>From everyday challenges to digital fraud, safety and security are fundamental rights for every senior.</p></div>
+    <div class="value-card"><h3>Community</h3><p>We are proudly Dayton-born and community-rooted. This is not just our market — it is our home.</p></div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     PAGE — TESTIMONIALS  (Unchanged)
+═══════════════════════════════════ -->
+<section class="page-section" id="testimonials">
+  <span class="page-label">Page — Testimonials</span>
+
+  <h1>What Families Are Saying</h1>
+  <p class="lead">The highest compliment we receive is when a family tells us their loved one seems like themselves again — lighter, more engaged, more connected. Here is what Dayton families have shared about their experience with Pampered Companion Care.</p>
+
+  <div class="callout callout-green">
+    <p><strong>Note for site owner:</strong> Replace placeholder testimonials below with real client quotes. Even short, authentic quotes with a first name and city build far more trust than polished placeholders.</p>
+  </div>
+
+  <div class="testimonial-grid">
+    <div class="t-card"><p class="t-text">Pampered Companion Care made a profound difference in my mother's life. The caregivers are kind, attentive, and truly treat her with the respect and warmth she deserves. I feel at peace knowing she has real company every week.</p><p class="t-author">Sarah K.</p><p class="t-role">Daughter of client, Dayton, OH</p></div>
+    <div class="t-card"><p class="t-text">My father was almost scammed out of his savings. Not only did they educate him on how these scams work — they made it interesting and relatable. He actually asks questions now instead of panicking. We are so grateful.</p><p class="t-author">Marcus T.</p><p class="t-role">Son of client, Kettering, OH</p></div>
+    <div class="t-card"><p class="t-text">My mother is fiercely independent and doesn't like feeling like she needs help. But from the very first technology session, something clicked. She now video calls her grandkids every Sunday and sets up her own reminders. I never thought I'd see that.</p><p class="t-author">Denise R.</p><p class="t-role">Daughter of client, Beavercreek, OH</p></div>
+    <div class="t-card"><p class="t-text">The free cybersecurity presentation at our senior center was eye-opening. He explained everything in plain language with practical steps people could take that same day. We've already had several families request in-home follow-ups.</p><p class="t-author">Pastor James W.</p><p class="t-role">Community organization, Dayton, OH</p></div>
+    <div class="t-card"><p class="t-text">Dad finally learned to video call his grandkids. Watching his face when he saw them on screen for the first time — that's something I'll never forget. They gave him back a piece of his family.</p><p class="t-author">Linda M.</p><p class="t-role">Daughter of client, Huber Heights, OH</p></div>
+    <div class="t-card"><p class="t-text">What sets this service apart is the consistency. Someone shows up every time, always prepared, always genuinely interested in my husband. We completed the full 12-session technology course and he is a completely different person with his phone now.</p><p class="t-author">Carol B.</p><p class="t-role">Wife of client, Centerville, OH</p></div>
+  </div>
+
+  <div class="cta-bar" style="margin-top:2rem">
+    <a class="btn-primary" href="mailto:info@pamperedcompanioncare.com">Share Your Story</a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     PAGE — FAQs  (Updated)
+═══════════════════════════════════ -->
+<section class="page-section" id="faqs">
+  <span class="page-label">Page — FAQs <span class="badge-updated">Updated</span></span>
+
+  <h1>Frequently Asked Questions</h1>
+  <p class="lead">We know that choosing care — or a technology course — for a loved one comes with many questions. Here are honest answers to the ones we hear most often. Still have something on your mind? Call us — we'd love to talk.</p>
+
+  <h2>About Companion Care</h2>
+  <div class="faq-list">
+    <div class="faq-item"><p class="faq-q">What is companion care, and is it the same as home health care?</p><p class="faq-a">Companion care focuses on social engagement, emotional support, and help with daily life tasks — it is not medical care. We provide meaningful human connection, errand help, appointment accompaniment, technology assistance, and the kind of consistent, trustworthy presence that makes a real difference in a senior's well-being.</p></div>
+    <div class="faq-item"><p class="faq-q">How much does companion care cost?</p><p class="faq-a">Companion care in Dayton averages $28–$35 per hour based on 2026 market data. Our rates are competitive within that range and are discussed transparently during the free consultation. There are no surprise fees. Contact us for current pricing specific to the type and frequency of care needed.</p></div>
+    <div class="faq-item"><p class="faq-q">Will my loved one have the same caregiver each time?</p><p class="faq-a">Yes — consistency is a core part of our approach. We make a thoughtful match between client and caregiver and work hard to keep that relationship stable. Trust builds over time, and we take that seriously.</p></div>
+  </div>
+
+  <h2>About the Three-Tier Technology Services</h2>
+  <div class="faq-list">
+    <div class="faq-item"><p class="faq-q">How do I know which tier is right for my loved one?</p><p class="faq-a">Call us for a free 15-minute phone assessment. We'll ask a few simple questions about the senior's current comfort with devices and their goals, then recommend the right starting tier. Most seniors start at Tier 1 or Tier 2. There is no pressure to move quickly — we go at the pace that works for them.</p></div>
+    <div class="faq-item"><p class="faq-q">Can a senior move between tiers as their skills improve?</p><p class="faq-a">Absolutely — and that is the goal. Our three-tier system is designed as a progression. As a senior builds confidence and skills, they naturally advance to the next level. We guide that progression and never rush it.</p></div>
+    <div class="faq-item"><p class="faq-q">What is the difference between a one-on-one session and a customized course?</p><p class="faq-a">One-on-one sessions are ideal for immediate help, specific questions, or occasional support. A customized course is a structured multi-session program with a designed lesson plan, printed take-home guides, and a clear progression toward specific goals. Courses offer better value per session and more measurable outcomes.</p></div>
+  </div>
+
+  <h2>About Workshops &amp; Customized Courses</h2>
+  <div class="faq-list">
+    <div class="faq-item"><p class="faq-q">Can you come to our senior center or church for a workshop?</p><p class="faq-a">Yes — and we would love to. We bring workshops to senior centers, churches, libraries, assisted living facilities, and community organizations throughout Dayton and Montgomery County. The fraud prevention workshop is always free. Other workshops are priced per session starting at $150. Contact us to check availability and book.</p></div>
+    <div class="faq-item"><p class="faq-q">How long does a customized course take to complete?</p><p class="faq-a">That depends on the package and the schedule that works best for the senior. A 4-session Starter Course can be completed in a month at one session per week. A 12-session Full Journey Course typically runs 10–12 weeks. We always adapt to the individual's pace.</p></div>
+    <div class="faq-item"><p class="faq-q">What is included in the printed guides?</p><p class="faq-a">Printed guides are written in large, easy-to-read text with step-by-step instructions, screenshots of real screens, and plain-language explanations — no tech jargon. Seniors can reference them anytime between sessions to practice on their own.</p></div>
+    <div class="faq-item"><p class="faq-q">Do you offer discounts for non-profit organizations?</p><p class="faq-a">Yes. We offer reduced-rate workshop and organizational curriculum pricing for registered non-profit organizations, senior centers, and faith communities. Contact us to discuss options for your organization.</p></div>
+  </div>
+
+  <h2>About the Free Fraud Education</h2>
+  <div class="faq-list">
+    <div class="faq-item"><p class="faq-q">Is the fraud and cybersecurity education really free?</p><p class="faq-a">Yes — completely and genuinely free. No hidden fees, no upselling, no obligation to sign up for any other service. We offer this because protecting seniors from digital fraud is the right thing to do.</p></div>
+    <div class="faq-item"><p class="faq-q">My parent already got scammed. Can you still help?</p><p class="faq-a">Yes. We help seniors who have already been victimized understand what happened, how to respond, and how to protect themselves going forward — with complete compassion and zero judgment. There is no shame in being targeted, and knowledge is the strongest protection.</p></div>
+  </div>
+
+  <div class="cta-bar" style="margin-top:2.5rem">
+    <a class="btn-primary" href="tel:3264673161">Call Us — (326) 467-3161</a>
+    <a class="btn-secondary" href="mailto:info@pamperedcompanioncare.com">Send an Email</a>
+  </div>
+</section>
+
+</div><!-- end wrapper -->
+
+<div class="print-note">
+  <strong>Pampered Companion Care</strong> &nbsp;·&nbsp; Dayton &amp; Montgomery County, Ohio &nbsp;·&nbsp; (326) 467-3161 &nbsp;·&nbsp; info@pamperedcompanioncare.com
+</div>
+
+</body>
+</html>
