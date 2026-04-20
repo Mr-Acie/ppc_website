@@ -1,0 +1,267 @@
+
+
+Got it — you want the actual code so you can copy and paste it into GitHub. Let me pull up all the blog-related files for you.
+
+Here are your blog files in code:
+
+---
+
+### 1. Blog Index Page — `src/app/blog/page.tsx`
+
+```tsx
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog | Pampered Companion Care",
+  description:
+    "Insights, stories, and resources on senior empowerment, digital safety, AI technology education, and independent living from Pampered Companion Care.",
+};
+
+const posts = [
+  {
+    slug: "mighty-elders-senior-empowerment-community",
+    title:
+      "The Mighty Elders: A Senior Empowerment Community Built for Confidence, Connection, and Independence",
+    excerpt:
+      "What happens when seniors stop being seen as people who need help — and start being celebrated as the strong, capable individuals they are? That's the idea behind Mighty Elders.",
+    date: "April 19, 2026",
+    readTime: "6 min read",
+    category: "Community",
+  },
+];
+
+export default function BlogPage() {
+  return (
+    <>
+      <section className="bg-[#0f1f3d] px-6 pb-20 pt-44 lg:px-8">
+        <div className="mx-auto max-w-5xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#c8a45d]">
+            Blog
+          </p>
+          <h1 className="mt-4 font-[family-name:var(--font-archivo)] text-5xl font-bold tracking-tight text-white md:text-6xl">
+            Stories, insights, and resources.
+          </h1>
+          <p className="mx-auto mt-6 max-w-3xl text-xl leading-9 text-white/75">
+            Practical wisdom on senior empowerment, digital safety, AI
+            education, and living independently with confidence.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-24 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          {posts.map((post) => (
+            <a
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="group block rounded-[32px] bg-[#faf6ee] p-8 ring-1 ring-[#e8d5a0]/30 transition hover:shadow-xl hover:shadow-[#0f1f3d]/5 md:p-10"
+            >
+              <div className="flex flex-wrap items-center gap-3 text-sm font-bold text-[#0f1f3d]/50">
+                <span className="rounded-full bg-[#0f1f3d] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#c8a45d]">
+                  {post.category}
+                </span>
+                <span>{post.date}</span>
+                <span>·</span>
+                <span>{post.readTime}</span>
+              </div>
+              <h2 className="mt-5 font-[family-name:var(--font-archivo)] text-3xl font-bold tracking-tight text-[#0f1f3d] transition group-hover:text-[#c8a45d] md:text-4xl">
+                {post.title}
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-[#556677]">
+                {post.excerpt}
+              </p>
+              <span className="mt-6 inline-flex items-center gap-2 text-lg font-bold text-[#c8a45d]">
+                Read article
+                <svg
+                  className="h-5 w-5 transition group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}
+```
+
+---
+
+### 2. Blog Post Layout — `src/app/blog/mighty-elders-senior-empowerment-community/layout.tsx`
+
+```tsx
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "The Mighty Elders: A Senior Empowerment Community | Pampered Companion Care",
+  description:
+    "What happens when seniors stop being seen as people who need help and start being celebrated as strong, capable individuals? Discover the Mighty Elders movement.",
+  keywords: [
+    "Mighty Elders",
+    "senior empowerment",
+    "senior community",
+    "senior confidence",
+    "senior independence",
+    "digital literacy seniors",
+    "Pampered Companion Care",
+  ],
+};
+
+export default function MightyEldersBlogLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
+}
+```
+
+---
+
+### 3. Blog Post Article — `src/app/blog/mighty-elders-senior-empowerment-community/page.tsx`
+
+This is the file that was missing. Here's the full article:
+
+```tsx
+export default function MightyEldersBlogPost() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="bg-[#0f1f3d] px-6 pb-20 pt-44 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <a
+            href="/blog"
+            className="inline-flex items-center gap-2 text-base font-bold text-[#c8a45d] transition hover:text-[#e8d5a0]"
+          >
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+            </svg>
+            Back to Blog
+          </a>
+
+          <div className="mt-8 flex flex-wrap items-center gap-3 text-sm font-bold text-white/50">
+            <span className="rounded-full bg-[#c8a45d]/20 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#c8a45d]">
+              Community
+            </span>
+            <span>April 19, 2026</span>
+            <span>·</span>
+            <span>6 min read</span>
+          </div>
+
+          <h1 className="mt-6 font-[family-name:var(--font-archivo)] text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
+            The Mighty Elders: A Senior Empowerment Community Built for Confidence, Connection, and Independence
+          </h1>
+
+          <p className="mt-6 text-xl leading-relaxed text-white/80">
+            What happens when seniors stop being seen as people who need help — and start being celebrated as the strong, capable individuals they are? That&apos;s the idea behind Mighty Elders.
+          </p>
+        </div>
+      </section>
+
+      {/* Article Body */}
+      <section className="bg-white px-6 py-24 lg:px-8">
+        <article className="prose-pcc mx-auto max-w-3xl">
+
+          {/* Intro */}
+          <p className="text-lg leading-relaxed text-[#3d4f66]">
+            There is a quiet crisis happening across America. Millions of seniors are isolated, disconnected, and made to feel like their best years are behind them. Society tells them to slow down. Technology moves on without them. And too often, the people who have the most wisdom to share are the ones with the fewest people listening.
+          </p>
+          <p className="mt-5 text-lg leading-relaxed text-[#3d4f66]">
+            Mighty Elders was created to change that narrative — completely.
+          </p>
+
+          {/* Section 1 */}
+          <h2 className="mt-14 font-[family-name:var(--font-archivo)] text-3xl font-bold tracking-tight text-[#0f1f3d]">
+            The Problem No One Talks About
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-[#3d4f66]">
+            When we think about aging, we tend to focus on what seniors lose — mobility, memory, independence. But we rarely talk about what they still have in abundance: resilience, perspective, humor, and an unshakable desire to stay connected to the people and world they love.
+          </p>
+          <p className="mt-5 text-lg leading-relaxed text-[#3d4f66]">
+            The real problem is not aging itself. It is the isolation that comes with it. According to the National Academies of Sciences, more than one-third of adults aged 45 and older feel lonely. Among those over 65, nearly one in four are considered socially isolated. And social isolation carries health risks comparable to smoking 15 cigarettes a day.
+          </p>
+          <p className="mt-5 text-lg leading-relaxed text-[#3d4f66]">
+            This is not just a health issue. It is a dignity issue. And it is exactly why Mighty Elders exists.
+          </p>
+
+          {/* Section 2 */}
+          <h2 className="mt-14 font-[family-name:var(--font-archivo)] text-3xl font-bold tracking-tight text-[#0f1f3d]">
+            What Is Mighty Elders?
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-[#3d4f66]">
+            Mighty Elders is a senior empowerment community built on one core belief: age is not a limitation — it is a superpower.
+          </p>
+          <p className="mt-5 text-lg leading-relaxed text-[#3d4f66]">
+            We are not a support group. We are not a medical service. We are a movement. A community of seniors, families, and advocates who believe that older adults deserve to be celebrated, connected, and equipped with the tools to thrive — not just survive.
+          </p>
+          <p className="mt-5 text-lg leading-relaxed text-[#3d4f66]">
+            Through Pampered Companion Care, Mighty Elders provides hands-on technology education, digital safety training, companionship, and community events designed to help seniors live boldly and independently.
+          </p>
+
+          {/* Section 3 */}
+          <h2 className="mt-14 font-[family-name:var(--font-archivo)] text-3xl font-bold tracking-tight text-[#0f1f3d]">
+            The Four Pillars of Mighty Elders
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-[#3d4f66]">
+            Everything we do is built on four pillars:
+          </p>
+
+          <div className="mt-8 space-y-6">
+            <div className="rounded-[24px] bg-[#faf6ee] p-7 ring-1 ring-[#e8d5a0]/30">
+              <h3 className="text-xl font-bold text-[#0f1f3d]">💪 Strength in Community</h3>
+              <p className="mt-3 text-base leading-relaxed text-[#3d4f66]">
+                No one thrives alone. Mighty Elders connects seniors with peers, mentors, and support networks that celebrate their experience and keep them engaged. Whether it is a weekly phone call, a group workshop, or a community event — connection is at the heart of everything we do.
+              </p>
+            </div>
+            <div className="rounded-[24px] bg-[#faf6ee] p-7 ring-1 ring-[#e8d5a0]/30">
+              <h3 className="text-xl font-bold text-[#0f1f3d]">🧠 Wisdom Worth Sharing</h3>
+              <p className="mt-3 text-base leading-relaxed text-[#3d4f66]">
+                Decades of life experience deserve a platform. We help seniors share their stories, mentor younger generations, and stay valued contributors to their communities. Your wisdom did not expire — it is needed now more than ever.
+              </p>
+            </div>
+            <div className="rounded-[24px] bg-[#faf6ee] p-7 ring-1 ring-[#e8d5a0]/30">
+              <h3 className="text-xl font-bold text-[#0f1f3d]">🛡️ Digital Confidence</h3>
+              <p className="mt-3 text-base leading-relaxed text-[#3d4f66]">
+                Technology should empower, not intimidate. Through our Tech Buddy program and digital safety workshops, we equip seniors with the skills to navigate smartphones, AI tools, and the internet safely and independently. No judgment. No rushing. Just patient, one-on-one support.
+              </p>
+            </div>
+            <div className="rounded-[24px] bg-[#faf6ee] p-7 ring-1 ring-[#e8d5a0]/30">
+              <h3 className="text-xl font-bold text-[#0f1f3d]">❤️ Dignity and Independence</h3>
+              <p className="mt-3 text-base leading-relaxed text-[#3d4f66]">
+                Every senior deserves to live on their own terms. We provide the tools, education, and support that make independent living not just possible, but fulfilling. We do not fix tech — we build independence.
+              </p>
+            </div>
+          </div>
+
+          {/* Section 4 */}
+          <h2 className="mt-14 font-[family-name:var(--font-archivo)] text-3xl font-bold tracking-tight text-[#0f1f3d]">
+            Why Technology Matters for Seniors
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-[#3d4f66]">
+            Let me be honest: the digital divide is real, and it is growing. Every year, more essential services move online — healthcare portals, banking, prescription management, even grocery ordering. Seniors who cannot navigate these tools are not just inconvenienced. They are cut off.
+          </p>
+          <p className="mt-5 text-lg leading-relaxed text-[#3d4f66]">
+            But here is what most people get wrong: seniors are not afraid of technology. They are frustrated by it. They are frustrated by tiny buttons, confusing menus, and instructions written by people who have never had to teach their grandmother how to send a text message.
+          </p>
+          <p className="mt-5 text-lg leading-relaxed text-[#3d4f66]">
+            That is where we come in. Our Tech Buddy program meets seniors exactly where they are. We teach iPhone and Android basics, video calling with family, telehealth appointments, scam prevention, smart home setup, and so much more. Every lesson is delivered with patience, respect, and a genuine commitment to building confidence.
+          </p>
+
+          {/* Section 5 */}
+          <h2 className="mt-14 font-[family-name:var(--font-archivo)] text-3xl font-bold tracking-tight text-[#0f1f3d]">
+            Real Stories, Real Transformation
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-[#3d4f66]">
+            The best way to understand what Mighty Elders means is through the people it serves:
+          
