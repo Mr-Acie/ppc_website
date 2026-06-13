@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Workshops", href: "/workshops" },
   { label: "Courses", href: "/courses" },
+  { label: "Mighty Elders", href: "/mighty-elders" },
   { label: "About", href: "/about" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "FAQ", href: "/faq" },
