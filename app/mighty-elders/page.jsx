@@ -184,26 +184,30 @@ export default function MightyEldersPage() {
             </div>
             <div>
               <div className="overflow-hidden rounded-lg border border-border-main bg-me-ink shadow-lg">
-                <div className="bg-gradient-to-br from-me-primary-dk to-me-ink p-8 text-white">
+                <div className="relative aspect-video bg-black">
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src="https://www.youtube.com/embed/gzNhq5R49MI"
+                    title="Mighty Elders — Founder Message from Acie Grimes"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="bg-gradient-to-br from-me-primary-dk to-me-ink p-6 text-white">
                   <p className="text-xs font-semibold uppercase tracking-widest text-me-accent">
-                    Watch on YouTube
+                    Founder Message
                   </p>
-                  <h3 className="mt-3 font-serif text-2xl font-semibold leading-tight">
-                    Pampered Companion Care
+                  <h3 className="mt-2 font-serif text-xl font-semibold leading-tight">
+                    Acie Grimes — Why I Started Mighty Elders
                   </h3>
-                  <p className="mt-2 text-sm text-white/70">
-                    The founder video lands here at launch. In the meantime,
-                    subscribe to the channel for senior technology training,
-                    scam alerts, and Mighty Elders updates.
-                  </p>
                   <a
                     href="https://youtube.com/@pamperedcompanioncare"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 rounded bg-me-accent px-5 py-3 text-sm font-semibold text-white transition hover:bg-me-accent/90"
+                    className="mt-4 inline-flex items-center gap-2 rounded bg-me-accent px-4 py-2 text-sm font-semibold text-white transition hover:bg-me-accent/90"
                   >
                     <svg
-                      className="h-5 w-5"
+                      className="h-4 w-4"
                       viewBox="0 0 24 24"
                       fill="currentColor"
                       aria-hidden="true"
@@ -213,26 +217,6 @@ export default function MightyEldersPage() {
                     Subscribe on YouTube
                   </a>
                 </div>
-                <div className="border-t border-white/10 bg-me-ink p-6">
-                  <p className="text-xs uppercase tracking-widest text-white/40">
-                    @pamperedcompanioncare
-                  </p>
-                </div>
-                {/*
-                  Once the founder video is filmed and uploaded, swap the block
-                  above for the iframe below. Replace VIDEO_ID with the YouTube
-                  ID (the part after "v=" in the watch URL).
-
-                  <div className="relative aspect-video">
-                    <iframe
-                      className="absolute inset-0 h-full w-full"
-                      src="https://www.youtube.com/embed/VIDEO_ID"
-                      title="Mighty Elders — Founder Message from Acie Grimes"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                */}
               </div>
             </div>
           </div>
