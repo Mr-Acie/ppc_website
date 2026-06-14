@@ -1,36 +1,66 @@
 import Link from "next/link";
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://pamperedcompanioncare.org";
+
+// Service-level structured data for the homepage
+const homeServiceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Genius Bar for Seniors — Technology, AI & Companion Care",
+  provider: { "@id": `${SITE_URL}/#business` },
+  areaServed: "Dayton & Montgomery County, Ohio",
+  description:
+    "One-on-one Genius Bar–style help for seniors: smartphones, computers, AI tools, cybersecurity, and warm companion care.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+    description: "Free 20-minute phone consultation",
+  },
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeServiceJsonLd) }}
+      />
+
       {/* Hero */}
       <section className="bg-navy py-24 text-white">
         <div className="mx-auto max-w-4xl px-6 text-center">
+          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-gold">
+            Dayton, Ohio · Serving Montgomery County
+          </p>
           <h1 className="font-serif text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-            Dayton&rsquo;s Most Trusted
+            A Genius Bar for Seniors —
             <br />
-            Senior Companion Care
+            Patient Tech, AI &amp; Companion Care
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
-            We bring compassionate in-home companionship, personalized daily
-            support, and free cybersecurity education to seniors across Dayton
-            and Montgomery County &mdash; because every older adult deserves
-            safety, dignity, and connection.
+            One-on-one help with smartphones, computers, and AI tools, plus warm
+            in-home companionship and free cybersecurity training for older
+            adults in Dayton &amp; Montgomery County, Ohio.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+            <Link
+              href="/contact"
+              className="rounded bg-gold px-8 py-3.5 text-base font-semibold text-white transition hover:bg-gold/90"
+            >
+              Book a Free Consultation
+            </Link>
             <a
               href="tel:3264673161"
-              className="rounded bg-gold px-8 py-3.5 text-base font-medium text-white transition hover:bg-gold/90"
+              className="rounded border border-white/30 px-8 py-3.5 text-base font-medium text-white transition hover:bg-white/10"
             >
               Call (326) 467-3161
             </a>
-            <Link
-              href="/services"
-              className="rounded border border-white/30 px-8 py-3.5 text-base font-medium text-white transition hover:bg-white/10"
-            >
-              See Our Services
-            </Link>
           </div>
+          <p className="mt-4 text-sm text-white/60">
+            No pressure, no obligation · 20-minute call
+          </p>
         </div>
       </section>
 
@@ -57,16 +87,14 @@ export default function Home() {
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="font-serif text-3xl font-semibold text-navy">
-            Care That Looks Out for the Whole Person
+            The Dayton Genius Bar Built Around Seniors
           </h2>
           <p className="mt-4 leading-relaxed text-muted">
-            At Pampered Companion Care, we believe senior care should go beyond
-            checking boxes. It should protect, uplift, and genuinely connect.
-            That&rsquo;s why we are the only companion care service in the
-            Dayton area that combines warm, in-home companionship with a full
-            three-tier technology education program and hands-on cybersecurity
-            training &mdash; keeping seniors safe from both daily challenges and
-            the growing threat of digital fraud.
+            Big-box tech stores feel rushed, intimidating, and impersonal.
+            Pampered Companion Care is different: a calm, one-on-one help desk
+            for seniors that combines patient technology and AI coaching with
+            real human companionship — delivered in your home, at your senior
+            center, or at your church across Dayton and Montgomery County.
           </p>
           <p className="mt-4 leading-relaxed text-muted">
             We are not a national franchise. We are a Dayton-born,
@@ -84,30 +112,30 @@ export default function Home() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="font-serif text-3xl font-semibold text-navy">
-            What We Offer
+            How We Help Seniors With Technology &amp; AI
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               {
-                icon: "🤝",
-                title: "Companion Care",
-                desc: "Meaningful companionship that combats loneliness and brightens every day — from heartfelt conversation to shared activities and gentle encouragement.",
+                icon: "📱",
+                title: "Smartphone &amp; Computer Help",
+                desc: "Patient one-on-one tech support — texting, FaceTime, email, Wi-Fi, printers, password resets, and everything in between.",
               },
               {
-                icon: "📱",
-                title: "Digital Empowerment — 3 Tiers",
-                desc: "From first-time smartphone setup to advanced digital independence — our three-tier technology education system meets every senior exactly where they are.",
+                icon: "🤖",
+                title: "AI Coaching for Seniors",
+                desc: "Learn to use ChatGPT, voice assistants, and AI tools safely and confidently — for writing, health questions, recipes, photos, and more.",
               },
               {
                 icon: "🛡️",
-                title: "Fraud & Scam Protection",
-                desc: "In-person cybersecurity education brought directly to your home, senior center, church, or community organization throughout Dayton and Montgomery County.",
+                title: "Fraud &amp; Scam Protection",
+                desc: "Free in-person cybersecurity education brought to your home, senior center, church, or community organization across Dayton.",
                 free: true,
               },
               {
-                icon: "⭐",
-                title: "Personalized Assistance",
-                desc: "Tailored support for daily living — errands, appointments, technology coaching, and more — always built around individual preferences and pace.",
+                icon: "🤝",
+                title: "Companion Care",
+                desc: "Warm, in-home companionship that combats loneliness — conversation, shared activities, errands, and gentle encouragement.",
               },
             ].map((item) => (
               <div
@@ -115,18 +143,32 @@ export default function Home() {
                 className="rounded border border-border-main bg-cream p-6"
                 style={{ borderTop: "3px solid #B8965A" }}
               >
-                <span className="text-2xl">{item.icon}</span>
-                <h3 className="mt-3 font-medium text-navy">{item.title}</h3>
+                <span className="text-2xl" aria-hidden="true">
+                  {item.icon}
+                </span>
+                <h3
+                  className="mt-3 font-medium text-navy"
+                  dangerouslySetInnerHTML={{ __html: item.title }}
+                />
                 {item.free && (
                   <span className="mt-1 inline-block rounded bg-green-50 px-2 py-0.5 text-xs font-medium uppercase tracking-wider text-green-700">
                     Always Free
                   </span>
                 )}
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {item.desc}
-                </p>
+                <p
+                  className="mt-2 text-sm leading-relaxed text-muted"
+                  dangerouslySetInnerHTML={{ __html: item.desc }}
+                />
               </div>
             ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/services"
+              className="inline-block rounded border border-navy px-6 py-3 text-sm font-medium text-navy transition hover:bg-navy hover:text-white"
+            >
+              See All Services
+            </Link>
           </div>
         </div>
       </section>
@@ -151,27 +193,27 @@ export default function Home() {
       <section className="bg-navy py-20 text-white">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="font-serif text-3xl font-semibold">
-            Serving Dayton &amp; Montgomery County, Ohio
+            Book a Free Consultation Today
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-white/80">
             Whether you&rsquo;re looking for ongoing companion care, a one-time
-            technology session, a community fraud prevention presentation, or a
-            fully customized digital skills course &mdash; we are here. Call us
-            for a free consultation with no pressure and no obligation.
+            tech or AI session, a community fraud prevention talk, or a
+            customized digital skills course &mdash; we&rsquo;re here. No
+            pressure, no obligation.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <a
-              href="mailto:info@pamperedcompanioncare.com"
-              className="rounded bg-gold px-8 py-3.5 font-medium text-white transition hover:bg-gold/90"
-            >
-              Get in Touch
-            </a>
             <Link
-              href="/faq"
+              href="/contact"
+              className="rounded bg-gold px-8 py-3.5 font-semibold text-white transition hover:bg-gold/90"
+            >
+              Book Free Consultation
+            </Link>
+            <a
+              href="tel:3264673161"
               className="rounded border border-white/30 px-8 py-3.5 font-medium text-white transition hover:bg-white/10"
             >
-              Read Our FAQs
-            </Link>
+              Call (326) 467-3161
+            </a>
           </div>
         </div>
       </section>

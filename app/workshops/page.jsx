@@ -1,7 +1,14 @@
 export const metadata = {
-  title: "Workshops & Group Learning",
+  title: "Senior Tech, AI & Cybersecurity Workshops in Dayton, Ohio",
   description:
-    "Practical technology education and cybersecurity workshops for seniors at community centers, churches, and organizations in Dayton, Ohio.",
+    "Hands-on technology, AI, and cybersecurity workshops for seniors at community centers, churches, and senior organizations across Dayton.",
+  alternates: { canonical: "/workshops" },
+  openGraph: {
+    title: "Senior Tech, AI & Cybersecurity Workshops — Pampered Companion Care",
+    description:
+      "Group learning for seniors: smartphones, AI tools, video calls, scam protection. Dayton & Montgomery County.",
+    url: "/workshops",
+  },
 };
 
 const workshops = [

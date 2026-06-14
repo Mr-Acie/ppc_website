@@ -12,6 +12,13 @@ body {
   color: #2d2d2d;
 }
 
+/* Reserve space for the mobile sticky call/book bar so it never covers footer content. */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 56px;
+  }
+}
+
 ::selection {
   background: #b8965a;
   color: #ffffff;

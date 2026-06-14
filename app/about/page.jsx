@@ -1,7 +1,14 @@
 export const metadata = {
-  title: "About Us",
+  title: "About Pampered Companion Care — Dayton's Genius Bar for Seniors",
   description:
-    "Built from decades of caregiving, military security expertise, and a belief that every Dayton senior deserves safety, connection, and dignity.",
+    "Built from decades of caregiving and 8 years of U.S. Air Force security expertise — patient technology, AI, and companion care for seniors in Dayton, Ohio.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Pampered Companion Care — Dayton's Genius Bar for Seniors",
+    description:
+      "Decades of caregiving plus U.S. Air Force security experience, serving seniors in Dayton & Montgomery County.",
+    url: "/about",
+  },
 };
 
 const timeline = [

@@ -46,7 +46,7 @@ export default function Header() {
                 Pampered Companion Care
               </p>
               <p className="text-xs font-medium uppercase tracking-widest text-muted">
-                Senior Companion Care
+                Genius Bar for Seniors · Dayton, OH
               </p>
             </div>
           </Link>
@@ -64,9 +64,9 @@ export default function Header() {
             ))}
             <Link
               href="/contact"
-              className="ml-3 rounded bg-gold px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gold/90"
+              className="ml-3 rounded bg-gold px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-gold/90"
             >
-              Contact Us
+              Book Free Consult
             </Link>
           </nav>
 
@@ -106,9 +106,9 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 rounded bg-gold px-5 py-3 text-center text-sm font-medium text-white"
+              className="mt-2 rounded bg-gold px-5 py-3 text-center text-sm font-semibold text-white"
             >
-              Contact Us
+              Book Free Consult
             </Link>
           </nav>
         </div>

@@ -1,9 +1,16 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Our Services",
+  title: "Senior Tech, AI & Companion Care Services in Dayton, Ohio",
   description:
-    "Companion care, personalized assistance, three-tier technology education, and free cybersecurity training for seniors in Dayton, Ohio.",
+    "Genius Bar–style help for seniors in Dayton: smartphone & computer support, AI coaching, free cybersecurity training, and warm in-home companion care.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Senior Tech, AI & Companion Care Services in Dayton, Ohio",
+    description:
+      "One-on-one tech and AI help plus compassionate companion care for seniors in Dayton & Montgomery County.",
+    url: "/services",
+  },
 };
 
 export default function ServicesPage() {
