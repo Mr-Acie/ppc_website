@@ -17,11 +17,11 @@ export default function StickyCallBar() {
         <span aria-hidden="true">📞</span> Call
       </a>
       <Link
-        href="/contact"
-        aria-label="Book a free consultation"
+        href="/book"
+        aria-label="Book an appointment"
         className="flex items-center justify-center gap-2 bg-gold py-3 text-sm font-semibold transition active:bg-gold/90"
       >
-        Book Free Consult
+        Book Appointment
       </Link>
     </div>
   );

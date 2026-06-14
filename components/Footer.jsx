@@ -23,6 +23,7 @@ export default function Footer() {
               Quick Links
             </h3>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/book" className="transition hover:text-gold">Book Appointment</Link></li>
               <li><Link href="/services" className="transition hover:text-gold">Services</Link></li>
               <li><Link href="/workshops" className="transition hover:text-gold">Workshops</Link></li>
               <li><Link href="/courses" className="transition hover:text-gold">Courses</Link></li>
@@ -59,10 +60,10 @@ export default function Footer() {
             <p className="text-sm">Monday &ndash; Friday</p>
             <p className="text-sm">9:00 AM &ndash; 5:00 PM</p>
             <Link
-              href="/contact"
-              className="mt-4 inline-block rounded bg-gold px-5 py-2.5 text-sm font-medium text-white transition hover:bg-gold/90"
+              href="/book"
+              className="mt-4 inline-block rounded bg-gold px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-gold/90"
             >
-              Get In Touch
+              Book Appointment
             </Link>
           </div>
         </div>

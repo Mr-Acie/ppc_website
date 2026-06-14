@@ -6,6 +6,7 @@ export default function sitemap() {
 
   const routes = [
     { path: "/", priority: 1.0, changeFrequency: "weekly" },
+    { path: "/book", priority: 0.95, changeFrequency: "monthly" },
     { path: "/services", priority: 0.9, changeFrequency: "monthly" },
     { path: "/workshops", priority: 0.8, changeFrequency: "monthly" },
     { path: "/courses", priority: 0.8, changeFrequency: "monthly" },

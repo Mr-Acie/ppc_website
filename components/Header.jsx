@@ -10,7 +10,6 @@ const navLinks = [
   { label: "Courses", href: "/courses" },
   { label: "Mighty Elders", href: "/mighty-elders" },
   { label: "About", href: "/about" },
-  { label: "Testimonials", href: "/testimonials" },
   { label: "FAQ", href: "/faq" },
 ];
 
@@ -63,10 +62,10 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/book"
               className="ml-3 rounded bg-gold px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-gold/90"
             >
-              Book Free Consult
+              Book Appointment
             </Link>
           </nav>
 
@@ -104,11 +103,11 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/book"
               onClick={() => setMenuOpen(false)}
               className="mt-2 rounded bg-gold px-5 py-3 text-center text-sm font-semibold text-white"
             >
-              Book Free Consult
+              Book Appointment
             </Link>
           </nav>
         </div>
