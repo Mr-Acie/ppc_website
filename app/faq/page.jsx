@@ -1,9 +1,16 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Frequently Asked Questions",
+  title: "FAQ — Senior Tech, AI & Companion Care in Dayton, Ohio",
   description:
-    "Answers to common questions about companion care, technology services, workshops, courses, and free fraud education from Pampered Companion Care.",
+    "Answers about companion care, smartphone & AI coaching, workshops, customized courses, and free cybersecurity training for seniors in Dayton.",
+  alternates: { canonical: "/faq" },
+  openGraph: {
+    title: "FAQ — Pampered Companion Care",
+    description:
+      "Common questions about senior tech help, AI coaching, and companion care in Dayton, Ohio.",
+    url: "/faq",
+  },
 };
 
 const faqSections = [
@@ -77,7 +84,22 @@ const faqSections = [
   },
 ];
 
+function buildFaqJsonLd(sections) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: sections.flatMap((s) =>
+      s.items.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
+    ),
+  };
+}
+
 export default function FAQPage() {
+  const jsonLd = buildFaqJsonLd(faqSections);
   return (
     <>
       <section className="bg-navy py-20 text-white">
@@ -115,20 +137,24 @@ export default function FAQPage() {
 
           <div className="mt-12 flex flex-col gap-4 sm:flex-row">
             <a
-              href="tel:3264673161"
-              className="rounded bg-gold px-6 py-3 text-center text-sm font-medium text-white transition hover:bg-gold/90"
+              href="/contact"
+              className="rounded bg-gold px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-gold/90"
             >
-              Call Us &mdash; (326) 467-3161
+              Book a Free Consultation
             </a>
             <a
-              href="mailto:info@pamperedcompanioncare.com"
+              href="tel:3264673161"
               className="rounded border border-navy px-6 py-3 text-center text-sm font-medium text-navy transition hover:bg-gold-light"
             >
-              Send an Email
+              Call (326) 467-3161
             </a>
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </>
   );
 }

@@ -1,7 +1,14 @@
 export const metadata = {
-  title: "Contact Us",
+  title: "Book a Free Consultation — Senior Tech & Companion Care in Dayton",
   description:
-    "Get in touch with Pampered Companion Care. Call (326) 467-3161 or email info@pamperedcompanioncare.com. Serving Dayton & Montgomery County, Ohio.",
+    "Book a free 20-minute consultation. Call (326) 467-3161 or email info@pamperedcompanioncare.org. Serving seniors in Dayton & Montgomery County, Ohio.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Book a Free Consultation — Pampered Companion Care",
+    description:
+      "Free, no-pressure consultation for senior tech, AI, and companion care in Dayton, Ohio.",
+    url: "/contact",
+  },
 };
 
 export default function ContactPage() {

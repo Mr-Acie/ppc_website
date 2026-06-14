@@ -1,9 +1,16 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Testimonials",
+  title: "Testimonials — Senior Tech & Companion Care in Dayton, Ohio",
   description:
-    "What Dayton families are saying about Pampered Companion Care — stories of connection, confidence, and genuine care.",
+    "What Dayton families say about Pampered Companion Care — stories of confidence with technology, AI, and warm companion care.",
+  alternates: { canonical: "/testimonials" },
+  openGraph: {
+    title: "Testimonials — Pampered Companion Care",
+    description:
+      "Real stories from Dayton families about senior tech help, fraud prevention, and companion care.",
+    url: "/testimonials",
+  },
 };
 
 const testimonials = [

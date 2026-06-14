@@ -1,7 +1,14 @@
 export const metadata = {
-  title: "Customized Technology Courses",
+  title: "Technology & AI Courses for Seniors in Dayton, Ohio",
   description:
-    "Structured, multi-session digital education programs tailored for seniors. From smartphone basics to advanced digital mastery in Dayton, Ohio.",
+    "Multi-session digital and AI courses tailored for seniors — from smartphone basics to confident AI use, in Dayton & Montgomery County.",
+  alternates: { canonical: "/courses" },
+  openGraph: {
+    title: "Technology & AI Courses for Seniors — Pampered Companion Care",
+    description:
+      "Structured tech and AI courses for seniors in Dayton, Ohio. Starter, Confidence, and Mastery tracks.",
+    url: "/courses",
+  },
 };
 
 const packages = [
