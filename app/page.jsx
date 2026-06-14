@@ -46,7 +46,7 @@ export default function Home() {
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="/contact"
+              href="/book"
               className="rounded bg-gold px-8 py-3.5 text-base font-semibold text-white transition hover:bg-gold/90"
             >
               Book a Free Consultation
@@ -173,6 +173,106 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Appointment teaser */}
+      <section id="book" className="bg-cream py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+            <div>
+              <p className="text-sm font-medium uppercase tracking-widest text-gold">
+                Book An Appointment
+              </p>
+              <h2 className="mt-3 font-serif text-3xl font-semibold text-navy">
+                Three ways to get started
+              </h2>
+              <ul className="mt-6 space-y-4 text-muted">
+                <li className="flex gap-3">
+                  <span className="text-xl" aria-hidden="true">
+                    📞
+                  </span>
+                  <span>
+                    <strong className="text-navy">
+                      Free 20-min phone consultation
+                    </strong>
+                    <br />
+                    A no-pressure intro call to talk through what you need.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-xl" aria-hidden="true">
+                    🏠
+                  </span>
+                  <span>
+                    <strong className="text-navy">In-home tech &amp; AI session</strong>
+                    <br />
+                    One-on-one help with phones, computers, and AI tools.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-xl" aria-hidden="true">
+                    🎤
+                  </span>
+                  <span>
+                    <strong className="text-navy">Workshop / community booking</strong>
+                    <br />
+                    For senior centers, churches, libraries, and community groups.
+                  </span>
+                </li>
+              </ul>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="/book"
+                  className="rounded bg-gold px-8 py-3.5 text-center font-semibold text-white transition hover:bg-gold/90"
+                >
+                  Book an Appointment
+                </Link>
+                <a
+                  href="tel:3264673161"
+                  className="rounded border border-navy px-8 py-3.5 text-center font-medium text-navy transition hover:bg-gold-light"
+                >
+                  Or Call (326) 467-3161
+                </a>
+              </div>
+            </div>
+            <div
+              className="rounded border border-border-main bg-white p-6 shadow-sm sm:p-8"
+              style={{ borderTop: "3px solid #B8965A" }}
+            >
+              <p className="text-sm font-medium uppercase tracking-widest text-gold">
+                What to expect
+              </p>
+              <h3 className="mt-2 font-serif text-2xl font-semibold text-navy">
+                We&rsquo;ll call you back within one business day.
+              </h3>
+              <ul className="mt-4 space-y-3 text-sm leading-relaxed text-muted">
+                <li className="flex gap-2">
+                  <span className="font-semibold text-gold">1.</span>
+                  <span>
+                    Share your name, phone number, and what you&rsquo;d like
+                    help with.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-semibold text-gold">2.</span>
+                  <span>
+                    Tell us when&rsquo;s a good day and time to reach you.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="font-semibold text-gold">3.</span>
+                  <span>
+                    Acie or a team member will call to confirm and answer your
+                    questions — no pressure, no obligation.
+                  </span>
+                </li>
+              </ul>
+              <p className="mt-6 text-xs text-muted">
+                Hours: Mon&ndash;Fri 9 AM &ndash; 5 PM Eastern
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonial callout */}
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6">
@@ -203,7 +303,7 @@ export default function Home() {
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="/contact"
+              href="/book"
               className="rounded bg-gold px-8 py-3.5 font-semibold text-white transition hover:bg-gold/90"
             >
               Book Free Consultation

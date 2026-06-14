@@ -1,3 +1,5 @@
+import AppointmentForm from "@/components/AppointmentForm";
+
 export const metadata = {
   title: "Book a Free Consultation — Senior Tech & Companion Care in Dayton",
   description:
@@ -140,6 +142,27 @@ export default function ContactPage() {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Embedded appointment form */}
+      <section id="book" className="bg-cream py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="mb-8 text-center">
+            <p className="text-sm font-medium uppercase tracking-widest text-gold">
+              Book An Appointment
+            </p>
+            <h2 className="mt-2 font-serif text-3xl font-semibold text-navy">
+              Request a callback
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-muted">
+              Tell us when&rsquo;s a good time to reach you. We&rsquo;ll call
+              back within one business day to confirm.
+            </p>
+          </div>
+          <div className="rounded border border-border-main bg-white p-6 shadow-sm sm:p-10">
+            <AppointmentForm />
           </div>
         </div>
       </section>
