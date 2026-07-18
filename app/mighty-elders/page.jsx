@@ -187,7 +187,7 @@ export default function MightyEldersPage() {
                 <div className="relative aspect-video bg-black">
                   <iframe
                     className="absolute inset-0 h-full w-full"
-                    src="https://www.youtube.com/embed/gzNhq5R49MI"
+                    src="https://www.youtube.com/embed/HEfKMw0F8GQ"
                     title="Mighty Elders — Founder Message from Acie Grimes"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
